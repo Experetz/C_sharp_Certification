@@ -18,16 +18,14 @@
 Объяснение: в массиве нет следующих друг за другом единиц.*/
 
 
-
-
-/* int GetSequenceOfOnes(int[] array)
+ int GetSequenceOfOnes(int[] array)
     {
-        int count = 0;
+        int count = 1;
         int maxCount = 0;
 
-for (int i = 0; i < array.Length; i++)
+for (int i = 1; i < array.Length; i++)
     {
-        if (array[i] == 1)
+        if ((array[i] == 1) && (array[i-1] == 1))
         {
             count++;
             if (count > maxCount)
@@ -35,20 +33,15 @@ for (int i = 0; i < array.Length; i++)
                 maxCount = count;
             }
         }
-        else
-        {
-            if (count > 0)
-            {
-                count = 0;
-            }
-        }
+                
     }
+    
     return maxCount;
 }
 
- int[] array = { 1, 0, 1, 0, 0, 0, 1 };
+ int[] array = { 0, 0, 0, 0, 0, 0, 0 };
  int maxCount = GetSequenceOfOnes(array);
- Console.WriteLine(maxCount);  */ 
+ Console.WriteLine(maxCount); 
 
  /*int[] array = {1, 0, 1, 0, 0, 0, 1};
         int maxCount = 0;
@@ -70,7 +63,7 @@ for (int i = 0; i < array.Length; i++)
             }
         }
         
-        Console.WriteLine("Quantity of sequences ones is: " + maxCount);*/
+Console.WriteLine("Quantity of sequences ones is: " + maxCount);*/
 
 /*int[] array = { 1, 1, 0, 1, 1, 1 };
         
@@ -102,7 +95,7 @@ for (int i = 0; i < array.Length; i++)
                 isInSequence = false;
             }
         }
-        
-        Console.WriteLine("The quantity of sequenced ones in array is: " + maxCount);*/
+if (maxCount == 1) maxCount= maxCount - 1;        
+Console.WriteLine("The quantity of sequenced ones in array is: " + maxCount);*/
         
 
