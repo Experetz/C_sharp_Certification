@@ -18,7 +18,67 @@
 Объяснение: в массиве нет следующих друг за другом единиц.*/
 
 
- int GetSequenceOfOnes(int[] array)
+int Promt(string message)
+{
+    Console.Write(message);
+    int result= int.Parse(Console.ReadLine());
+    return result;
+}
+
+int[] GetArray(int size)
+{
+    int [] array = new int[size];
+    for (int i = 0; i < size; i++)
+    {
+
+        array[i] = new Random().Next(0, 2);
+        Console.Write(array[i]  + ", ");    
+
+    }
+    return array;  
+
+}
+
+int GetResult(int[] array)
+    {
+        int count = 0;
+        int maxCount = 0;
+
+for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] == 1)
+        {
+            count++;
+
+        }
+        else
+        {
+            if (maxCount < count) maxCount=count;
+            count = 0;
+        }
+    if (maxCount < count) maxCount=count;
+    if (maxCount < 2) maxCount = 0;     
+
+    }
+
+    return maxCount;
+
+}
+
+
+int size = Promt("What size of the array  do you want? Put a number ");
+int[] array = GetArray(size);
+
+int maxCount = GetResult(array);
+
+Console.WriteLine();
+Console.WriteLine("The number of Ones in a row is   " + maxCount);
+
+
+
+
+
+ /*int GetSequenceOfOnes(int[] array)
     {
         int count = 1;
         int maxCount = 0;
@@ -41,7 +101,7 @@ for (int i = 1; i < array.Length; i++)
 
  int[] array = { 0, 0, 0, 0, 0, 0, 0 };
  int maxCount = GetSequenceOfOnes(array);
- Console.WriteLine(maxCount); 
+ Console.WriteLine(maxCount); */
 
  /*int[] array = {1, 0, 1, 0, 0, 0, 1};
         int maxCount = 0;

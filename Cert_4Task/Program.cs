@@ -33,7 +33,7 @@ int ConvertStringToInt(string str)
     return result;
 }
 
-string SummAndConvert(int num1, int num2)
+string SumAndConvert(int num1, int num2)
 {
     return Convert.ToString(num1 + num2);
 }
@@ -42,4 +42,4 @@ string SummAndConvert(int num1, int num2)
 
 string num1 = "0";
 string num2 = "11";
-Console.WriteLine("The sum of your numbers is " + SummAndConvert(ConvertStringToInt(num1),ConvertStringToInt(num2)));
+Console.WriteLine("The sum of your numbers is " + SumAndConvert(ConvertStringToInt(num1),ConvertStringToInt(num2)));
